@@ -131,38 +131,43 @@ body, html {
     width: 90rem;
     height: 50rem;
     background-color: #fff;
-    background-image: url("../assets/blob.png");
-    background-size: cover;
-    padding: 3.5rem;
-    justify-content: center;
-    position: relative;
+
+
 }
 
 /*Boas Vindas TV*/
 
-.text-area {
+.boas-vindas {
+    background-image: url("../assets/blob.png");
+    background-size: cover;
+    justify-content: center;
+    padding: 3.5rem;
+    position: relative;
+}
+
+.bv-text-area {
     width: 40rem;
     display: flex;
     flex-direction: column;
     gap: 3rem;
 }
 
-.text-area h1 {
+.bv-text-area h1 {
     color: var(--blue-150);
 }
 
-.title h1,
-.subtitle h1 {
+.bv-title h1,
+.bv-subtitle h1 {
     font-family: var(--title-font);
     font-weight: 200;
 }
 
-.title h1,
-.name h1 {
+.bv-title h1,
+.bv-name h1 {
     font-size: 60px;
 }
 
-.subtitle h1 {
+.bv-subtitle h1 {
     font-size: 30px;
 }
 
@@ -170,21 +175,22 @@ body, html {
     color: var(--blue-50);
 }
 
-.name h1 {
+.bv-name h1 {
     font-family: var(--name-font);
     font-weight: bold;
 }
 
-/*Watermark*/
-.watermark {
+.bv-watermark {
     position: absolute;
     bottom: 0;
     left: 1.3rem;
 }
 
-.watermark img {
+.bv-watermark img {
     width: 10rem;
 }
+
+/*Papel porta*/
 
 .papelPorta {
     display: none;
