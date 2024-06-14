@@ -30,31 +30,40 @@ body, html {
 
 /* ScrollBar */
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 1rem;
 }
 ::-webkit-scrollbar-thumb {
     background-color: var(--btn-color);
     border-radius: 1rem;
 }
 ::-moz-scrollbar {
-    width: 5px;
+    width: 1rem;
 }
 
-#title {
+header {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    width: 86rem;
     margin: 1rem auto;
-    width: 40rem;
-    padding: 1rem;
-    text-align: center;
+    border-radius: .5rem;
+    background: #FFF;
+    box-shadow: 5px 4px 6px 0px rgba(0, 0, 0, 0.15);
+}
+
+header > h1 {
+    margin-left: 1rem;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+header > img {
+    width: 3rem;
 }
 
 .container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    align-items: center;
     margin: 0 auto;
     padding: 1rem;
     gap: 1rem;
@@ -66,8 +75,9 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 35rem;
-    
+    height: auto;
     padding: 2.5rem;
     background-color: #fff;
     border-radius: 0.5rem;
@@ -126,30 +136,28 @@ body, html {
 /*Preview*/
 
 .preview {
-    display: flex;
-    flex-direction: column;
-    width: 90rem;
-    height: 50rem;
+    width: 50rem;
+    height: 30rem;
     background-color: #fff;
-
-
 }
 
 /*Boas Vindas TV*/
 
 .boas-vindas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-image: url("../assets/blob.png");
     background-size: cover;
-    justify-content: center;
-    padding: 3.5rem;
+    padding: 2rem;
     position: relative;
 }
 
 .bv-text-area {
-    width: 40rem;
     display: flex;
+    width: 30rem;
     flex-direction: column;
-    gap: 3rem;
+    gap: 1rem;
 }
 
 .bv-text-area h1 {
@@ -164,11 +172,11 @@ body, html {
 
 .bv-title h1,
 .bv-name h1 {
-    font-size: 60px;
+    font-size: 2.5rem;
 }
 
 .bv-subtitle h1 {
-    font-size: 30px;
+    font-size: 1.2rem;
 }
 
 .blue-text {
@@ -187,12 +195,11 @@ body, html {
 }
 
 .bv-watermark img {
-    width: 10rem;
+    width: 8rem;
 }
 
 /*Papel porta*/
 
 .papelPorta {
     display: none;
-    background-color: red;
 }

@@ -34,14 +34,14 @@ function selectArt() {
     const papelPorta = document.getElementById("papelPorta");
 
     if (art === "boasVindas") {
-        boasVindas.style.display = "block";
+        boasVindas.style.display = "flex";
         papelPorta.style.display = "none";
         
         showBoasVindasInputs();
 
     } else {
         boasVindas.style.display = "none";
-        papelPorta.style.display = "block";
+        papelPorta.style.display = "flex";
 
         showPapelPortaInputs();
     }
@@ -50,10 +50,10 @@ function selectArt() {
 document.getElementById("download-btn").onclick = function () {
     const screenshotTarget = document.getElementById("BoasVindasTV");
     const inputName = document.getElementById("nameInput").value;
-    const name = document.getElementById("name");
+    const name = document.getElementById("bv-name");
     const fileName = inputName + '.png';
     const genre = document.getElementById("genre").value;
-    const welcomeMsg = document.getElementById("welcome-msg");
+    const welcomeMsg = document.getElementById("bv-welcome-msg");
 
     if (genre === "masc") {
         welcomeMsg.textContent = "Seja Bem-Vindo!";
@@ -62,7 +62,7 @@ document.getElementById("download-btn").onclick = function () {
     }
     name.textContent = inputName;
 
-    html2canvas(screenshotTarget, { scale: 5 }).then((canvas) => {
+    html2canvas(screenshotTarget, { scale: 10 }).then((canvas) => {
         const base64image = canvas.toDataURL("image/png");
         var a = document.createElement("a");
         a.setAttribute("href", base64image);

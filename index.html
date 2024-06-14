@@ -4,27 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerador Boas vindas</title>
+    <title>Gerador de Arte</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
-    <div id="title">
-        <h1>Gerador de Arte saine</h1>
-    </div>
+    <header>
+        <img src="assets/logoSaine.png">
+        <h1>Gerador de Arte</h2>
+    </header>
+
     <div class="container">
      
         <div class="config-area">
             <div class="input">
                 <label for="art">Selecione a arte:</label>            
                 <select id="art" onchange="selectArt()">
-                    <option value="boasVindas">Boas Vindas TV</option>
+                    <option value="boasVindas">Boas Vindas</option>
                     <option value="papelPorta">Papel porta</option>
                 </select>
             </div>
            
             <div class="input">
-                <label for="nameInput">Nome do Paciente:</label>
+                <label for="nameInput">Nome do paciente:</label>
                 <input type="text" id="nameInput" maxlength="35">
             </div>
             
@@ -87,17 +90,7 @@
         </div>
         
         <div class="preview papelPorta" id="papelPorta">
-            <div class="text-area">
-                <div class="title">
-                    <h1 id="welcome-msg">Seja Bem-Vindo!</h1>
-                </div>
-                <div class="name">
-                    <h1 id="name">Nome do Paciente</h1>
-                </div>
-                <div class="subtitle">
-                    <h1>QUE SUA EXPERIÊNCIA <br> SEJA <span class="blue-text">INCRÍVEL</span></h1>
-                </div>
-            </div>
+            
             <div class="watermark">
                 <img src="assets/watermark.png" alt="Watermark Image">
             </div>
