@@ -206,4 +206,50 @@ header > img {
 
 .papelPorta {
     display: none;
+    position: relative;
+    padding: 2rem;
 }
+
+#pp-name {
+    margin-bottom: 1rem;
+    font-family: var(--name-font);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.pp-text-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Questrial';
+    gap: .5rem;
+}
+
+.pp-text-area p {
+    color: var(--blue-50);
+    font-size: 1.2rem;
+}
+
+.pp-text-area h1 {
+    color: var(--blue-150);
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+.pp-watermark {
+    position: absolute;
+    bottom: 0;
+    right: 1.3rem;
+}
+
+.pp-watermark img, .pp-saine-logo img{
+    width: 8rem;
+}
+
+.pp-saine-logo {
+    position: absolute;
+    top: .7rem;
+    right: .5rem;
+}
+
+

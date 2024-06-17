@@ -7,7 +7,6 @@ const papelPorta = document.getElementById("papelPorta");
 
 //inputs
 
-const genre = document.querySelector(".genre");
 const doctorName = document.querySelector(".doctorName");
 const date = document.querySelector(".date");
 const procedure = document.querySelector(".procedure");
@@ -90,8 +89,9 @@ generatePDFButton.addEventListener('click', function() {
       html2canvas: { scale: 2 },
       jsPDF: {  
         unit: 'mm',
-        format: [30, 90],
-        orientation: 'landscape' 
+      //format: [30, 90],
+        format: 'a4',
+        orientation: 'portrait' 
       }
     };
   
