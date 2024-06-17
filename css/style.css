@@ -30,14 +30,14 @@ body, html {
 
 /* ScrollBar */
 ::-webkit-scrollbar {
-    width: 1rem;
+    width: .5rem;
 }
 ::-webkit-scrollbar-thumb {
     background-color: var(--btn-color);
     border-radius: 1rem;
 }
 ::-moz-scrollbar {
-    width: 1rem;
+    width: .5rem;
 }
 
 header {
@@ -111,6 +111,10 @@ header > img {
 .foodAllergies,
 .drugAllergy,
 .suits {
+    display: none;
+}
+
+#download-pdf {
     display: none;
 }
 
