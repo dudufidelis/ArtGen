@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Questrial&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Mate&family=Montserrat:ital,wght@0,300;0,400;0,600;1,400;1,500&family=Preahvihear&display=swap');
+
+:root {
+    --title-font: "Questrial";
+    --name-font: "Open Sans";
+    --blue-50: #7bb2d8;
+    --blue-100: #005c84;
+    --blue-150: #0f3143;
+    --bg-color: #F4F4F4;
+    --input-color: #E3E3E3;
+    --btn-color: #035980;
+    --bar-color:  #0000002e;
+    --shadow: 5px 4px 4px 0px rgba(0, 0, 0, 0.115);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body, html {
+    background-color: var(--bg-color);
+    font-family: 'Questrial', sans-serif;
+}
+
+/* ScrollBar */
+::-webkit-scrollbar {
+    width: .3rem;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--btn-color);
+    border-radius: 1rem;
+}
+::-moz-scrollbar {
+    width: .5rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    width: 80rem;
+    margin: 2rem auto 4rem;
+    border-radius: .5rem;
+    background: #FFF;
+    box-shadow: var(--shadow);
+}
+
+header > div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: default;
+}
+
+header > div > img {
+    width: 5rem;
+}
+
+header > div > h1 {
+    font-weight: lighter;
+    font-size: 2rem;
+}
+
+header > button {
+    width: 6rem;
+    height: 2.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    background: var(--btn-color);
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 1.2rem;
+    color: #FFF;
+    font-size: 1.2rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all ease-in-out 200ms;
+}
+
+header > button:hover {
+    opacity: 0.9;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    gap: 3rem;
+    width: 80rem;
+    margin-bottom: 5rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 23.5rem;
+    height: 20rem;
+    padding: 2rem;
+    background-color: #FFF;
+    border-radius: 0.3rem;
+    box-shadow: var(--shadow);
+    transition: box-shadow 300ms ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 30px rgba(65, 65, 65, 0.438);
+}
+
+.card img {
+    width: 20rem;
+}
+
+.card h1 {
+    color: #000;
+    font-weight: lighter;
+    font-size: 1.8rem;
+}
+
+.watermark {
+    color: rgb(173, 173, 173);
+    font-size: 1.2rem;
+    padding: .5rem;
+    width: 100%;
+    text-align: right;
+}
+
