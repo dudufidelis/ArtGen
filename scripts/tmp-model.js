@@ -1,20 +1,5 @@
-//buttons
-const generatePNGButton = document.getElementById("download-png");
-const generatePDFButton = document.getElementById("download-pdf");
-console.log(generatePDFButton)
-//Art to generate
-const boasVindas = document.getElementById("BoasVindasTV");
-const papelPorta = document.getElementById("papelPorta");
 
-//inputs
-const genre = document.querySelector(".genre");
-const doctorName = document.querySelector(".doctorName");
-const date = document.querySelector(".date");
-const procedure = document.querySelector(".procedure");
-const foodAllergies = document.querySelector(".foodAllergies");
-const drugAllergy = document.querySelector(".drugAllergy");
-const suits = document.querySelector(".suits");
-
+//PNG MODEL
 generatePNGButton.addEventListener('click', function() {
     const inputName = document.getElementById("nameInput").value
     const name = document.getElementById("bv-name");
@@ -40,6 +25,8 @@ generatePNGButton.addEventListener('click', function() {
     });
 });
 
+
+//PDF MODEL
 generatePDFButton.addEventListener('click', function() {
     const inputName = document.getElementById("nameInput").value
     const doctorName = document.querySelector("#doctorName").value;
