@@ -1,6 +1,7 @@
 //buttons
 const generatePNGButton = document.getElementById("download-png");
-const generatePDFButton = document.getElementById('download-pdf');
+const generatePDFButton = document.getElementById("download-pdf");
+console.log(generatePDFButton)
 //Art to generate
 const boasVindas = document.getElementById("BoasVindasTV");
 const papelPorta = document.getElementById("papelPorta");
@@ -13,47 +14,6 @@ const procedure = document.querySelector(".procedure");
 const foodAllergies = document.querySelector(".foodAllergies");
 const drugAllergy = document.querySelector(".drugAllergy");
 const suits = document.querySelector(".suits");
-
-function showBoasVindasInputs() {
-    genre.style.display = "flex";
-    doctorName.style.display = "none";
-    date.style.display = "none";
-    procedure.style.display = "none";
-    foodAllergies.style.display = "none";
-    drugAllergy.style.display = "none";
-    suits.style.display = "none";
-    generatePNGButton.style.display = "block";
-    generatePDFButton.style.display = "none";
-}
-
-function showPapelPortaInputs() {
-    genre.style.display = "none";
-    doctorName.style.display = "flex";
-    date.style.display = "flex";
-    procedure.style.display = "flex";
-    foodAllergies.style.display = "flex";
-    drugAllergy.style.display = "flex";
-    suits.style.display = "flex";
-    generatePNGButton.style.display = "none";
-    generatePDFButton.style.display = "block";
-};
-
-function selectArt() {
-    const art = document.getElementById("art").value;
-    
-    if (art === "boasVindas") {
-        boasVindas.style.display = "flex";
-        papelPorta.style.display = "none";
-        
-        showBoasVindasInputs();
-
-    } else {
-        boasVindas.style.display = "none";
-        papelPorta.style.display = "flex";
-
-        showPapelPortaInputs();
-    }
-};
 
 generatePNGButton.addEventListener('click', function() {
     const inputName = document.getElementById("nameInput").value

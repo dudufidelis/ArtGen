@@ -138,19 +138,6 @@ header > a:hover {
     flex-direction: column;
 }
 
-.doctorName,
-.date,
-.procedure,
-.foodAllergies,
-.drugAllergy,
-.suits {
-    display: none;
-}
-
-#download-pdf {
-    display: none;
-}
-
 .config-area button {
     width: 7rem;
     height: 2.5rem;
@@ -238,7 +225,6 @@ header > a:hover {
 /*Papel porta*/
 
 .papelPorta {
-    display: none;
     position: relative;
     padding: 2rem;
 }
