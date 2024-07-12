@@ -1,27 +1,37 @@
 const generatePNGButton = document.getElementById("download-png");
-const boasVindas = document.getElementById("BoasVindasTV");
 
-generatePNGButton.addEventListener('click', function() {
-    const inputName = document.getElementById("nameInput").value
-    const name = document.getElementById("bv-name");
-    const fileName = inputName + '.png';
-    const welcomeMsg = document.getElementById("bv-welcome-msg");
+function getInputValues() {
+    const inputName = document.getElementById("nameInput").value;
     const genre = document.getElementById("genre").value;
 
-    if (genre === "masc") {
-        welcomeMsg.textContent = "Seja Bem-Vindo!";
-    } else {
-        welcomeMsg.textContent = "Seja Bem-Vinda!";
-    }
+    return { inputName, genre };
+}
 
-    name.textContent = inputName;
+function updatePreviewDisplay(inputValues) {
+    const name = document.getElementById("bv-name");
+    const welcomeMsg = document.getElementById("bv-welcome-msg");
+
+    welcomeMsg.textContent = inputValues.genre === "masc" 
+        ? "Seja Bem-Vindo!" 
+        : "Seja Bem-Vinda!";
+
+    name.textContent = inputValues.inputName;
+}
+
+generatePNGButton.addEventListener("click", function () {
+    const boasVindas = document.getElementById("BoasVindasTV");
+
+    const inputValues = getInputValues();
+    updatePreviewDisplay(inputValues);
+
+    const fileName = inputValues.inputName + ".png";
 
     html2canvas(boasVindas, { scale: 5 }).then((canvas) => {
         const base64image = canvas.toDataURL("image/png");
-        var a = document.createElement("a");
-        a.setAttribute("href", base64image);
-        a.setAttribute("download", fileName);
-        a.click();
-        a.remove();
+        const link = document.createElement("a");
+        link.setAttribute("href", base64image);
+        link.setAttribute("download", fileName);
+        link.click();
+        link.remove();
     });
 });
