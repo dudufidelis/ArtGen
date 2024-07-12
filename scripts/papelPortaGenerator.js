@@ -14,6 +14,8 @@ generatePDFButton.addEventListener('click', function() {
     const inputName = document.getElementById("nameInput").value
     const doctorName = document.querySelector("#doctorName").value;
     const date = document.querySelector("#date").value;
+    const dateParts = date.split("-");
+    const formattedDate = `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
     const procedure = document.querySelector("#procedure").value;
     const foodAllergies = document.querySelector("#foodAllergies").value;
     const drugAllergy = document.querySelector("#drugAllergy").value;
@@ -29,7 +31,7 @@ generatePDFButton.addEventListener('click', function() {
 
     tagName.textContent = inputName;
     tagDoctorName.textContent = doctorName;
-    tagDate.textContent = date;
+    tagDate.textContent = formattedDate;
     tagProcedure.textContent = procedure;
     tagFoodAllergies.textContent = foodAllergies;
     tagDrugAllergy.textContent = drugAllergy;
