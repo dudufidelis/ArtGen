@@ -1,15 +1,6 @@
 const generatePDFButton = document.getElementById("download-pdf");
 const papelPorta = document.getElementById("papelPorta");
 
-//inputs
-const genre = document.querySelector(".genre");
-const doctorName = document.querySelector(".doctorName");
-const date = document.querySelector(".date");
-const procedure = document.querySelector(".procedure");
-const foodAllergies = document.querySelector(".foodAllergies");
-const drugAllergy = document.querySelector(".drugAllergy");
-const suits = document.querySelector(".suits");
-
 generatePDFButton.addEventListener('click', function() {
     const inputName = document.getElementById("nameInput").value
     const doctorName = document.querySelector("#doctorName").value;
@@ -20,6 +11,13 @@ generatePDFButton.addEventListener('click', function() {
     const foodAllergies = document.querySelector("#foodAllergies").value;
     const drugAllergy = document.querySelector("#drugAllergy").value;
     const suits = document.querySelector("#suits").value;
+    const previewSuits = document.querySelector(".suitsArea");
+
+    if (suits == "") {
+      previewSuits.style.display = "none"
+    } else {
+      previewSuits.style.display = "block"
+    }
 
     const tagName = document.querySelector("#pp-name")
     const tagDoctorName = document.querySelector("#pp-doctor-name");
