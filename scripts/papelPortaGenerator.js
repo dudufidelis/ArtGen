@@ -1,5 +1,3 @@
-const generatePDFButton = document.getElementById("download-pdf");
-
 function getInputValues() {
     const inputName = document.getElementById("nameInput").value;
     const doctorName = document.querySelector("#doctorName").value;
@@ -42,7 +40,7 @@ function updatePreviewDisplay(inputValues) {
     tagSuits.textContent = inputValues.suits;
 }
 
-generatePDFButton.addEventListener("click", function () {
+document.getElementById("download-pdf").addEventListener("click", function () {
     const papelPorta = document.getElementById("papelPorta");
 
     const inputValues = getInputValues();

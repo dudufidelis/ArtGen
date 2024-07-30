@@ -1,5 +1,3 @@
-const generatePNGButton = document.getElementById("download-png");
-
 function getInputValues() {
     const inputName = document.getElementById("nameInput").value;
     const genre = document.getElementById("genre").value;
@@ -18,7 +16,7 @@ function updatePreviewDisplay(inputValues) {
     name.textContent = inputValues.inputName;
 }
 
-generatePNGButton.addEventListener("click", function () {
+document.getElementById("download-png").addEventListener("click", function () {
     const boasVindas = document.getElementById("BoasVindasTV");
 
     const inputValues = getInputValues();
