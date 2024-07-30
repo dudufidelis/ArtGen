@@ -2,12 +2,13 @@
 
 .preview {
     width: 50rem;
-    height: 30rem;
+    height: 90rem;
     background-color: #fff;
 }
 
 /*Ficha cadastral*/
 
 .ficha-cadastral {
-    display: block;
+    font-family: "Questrial";
+    display: flex;
 }
