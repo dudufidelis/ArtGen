@@ -1,0 +1,13 @@
+/*Preview*/
+
+.preview {
+    width: 50rem;
+    height: 30rem;
+    background-color: #fff;
+}
+
+/*Ficha cadastral*/
+
+.ficha-cadastral {
+    display: block;
+}
