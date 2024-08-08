@@ -12,6 +12,16 @@ function getInputValues() {
     return { inputName, doctorName, formattedDate, procedure, foodAllergies, drugAllergy, suits };
 }
 
+function checkInputLenght(input) {
+    if (input.length > 35) {
+        document.querySelector("#pp-procedure").style.fontSize = "1.2rem"
+        document.querySelector("#pp-procedure").style.fontWeight = "600"
+    } else {
+        document.querySelector("#pp-procedure").style.fontSize = "2rem"
+        document.querySelector("#pp-procedure").style.fontWeight = "200"
+    }
+}
+
 function toggleSuitsVisibility(suits) {
     const previewSuits = document.querySelector(".suitsArea");
 
@@ -44,6 +54,7 @@ document.getElementById("download-pdf").addEventListener("click", function () {
     const papelPorta = document.getElementById("papelPorta");
 
     const inputValues = getInputValues();
+    checkInputLenght(inputValues.procedure)
     toggleSuitsVisibility(inputValues.suits);
     updatePreviewDisplay(inputValues);
 
