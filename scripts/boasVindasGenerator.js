@@ -14,6 +14,7 @@ function updatePreviewDisplay(inputValues) {
         : "Seja Bem-Vinda!";
 
     name.textContent = inputValues.inputName;
+    name.style.textTransform = "uppercase"
 }
 
 document.getElementById("download-png").addEventListener("click", function () {

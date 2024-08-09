@@ -32,6 +32,12 @@ function toggleSuitsVisibility(suits) {
     }
 }
 
+function setUppercase(textPreview) {
+    textPreview.forEach(textPreview => {
+        textPreview.style.textTransform = "uppercase";
+    });
+}
+
 function updatePreviewDisplay(inputValues) {
     const tagName = document.querySelector("#pp-name");
     const tagDoctorName = document.querySelector("#pp-doctor-name");
@@ -48,13 +54,18 @@ function updatePreviewDisplay(inputValues) {
     tagFoodAllergies.textContent = inputValues.foodAllergies;
     tagDrugAllergy.textContent = inputValues.drugAllergy;
     tagSuits.textContent = inputValues.suits;
+
+    return [tagName, tagDoctorName, tagDate, tagProcedure, tagFoodAllergies, tagDrugAllergy, tagSuits]
+    
 }
 
 document.getElementById("download-pdf").addEventListener("click", function () {
     const papelPorta = document.getElementById("papelPorta");
 
     const inputValues = getInputValues();
+    const textPreview = updatePreviewDisplay(inputValues)
     checkInputLenght(inputValues.procedure)
+    setUppercase(textPreview)
     toggleSuitsVisibility(inputValues.suits);
     updatePreviewDisplay(inputValues);
 
