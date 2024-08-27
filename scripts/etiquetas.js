@@ -4,20 +4,22 @@ let height = 40;
 // 85, 20 to label
 // 205, 45 to Bracelet
 
-let selectOpt = document.querySelector("#labelOpt").addEventListener("change", () => {
-    let selectedOpt = document.querySelector("#labelOpt").value;
-    switch (selectedOpt) {
-        case "bracelet":
-            showSelectedOpt("bracelet")
-            break
-        case "label":
-            showSelectedOpt("label")
-            break
-        case "companion":
-            showSelectedOpt("companion")
-            break
-    }
-})
+let SelectOpt = document
+    .querySelector("#labelOpt")
+    .addEventListener("change", () => {
+        let selectedOpt = document.querySelector("#labelOpt").value;
+        switch (selectedOpt) {
+            case "bracelet":
+                showSelectedOpt("bracelet");
+                break;
+            case "label":
+                showSelectedOpt("label");
+                break;
+            case "companion":
+                showSelectedOpt("companion");
+                break;
+        }
+    });
 
 function showSelectedOpt(selected) {
     //config area
@@ -25,10 +27,10 @@ function showSelectedOpt(selected) {
     const labelOpt = document.querySelector(".labelOpt");
     const companionOpt = document.querySelector(".companionOpt");
     //Previews
-    const previewBracelet = document.querySelector(".previewBracelet")
-    const previewLabel = document.querySelector(".previewLabel")
-    const previewCompanion = document.querySelector(".previewCompanion")
-    
+    const previewBracelet = document.querySelector(".previewBracelet");
+    const previewLabel = document.querySelector(".previewLabel");
+    const previewCompanion = document.querySelector(".previewCompanion");
+
     if (selected === "bracelet") {
         //add notSelected
         labelOpt.classList.add("notSelected");
@@ -38,8 +40,7 @@ function showSelectedOpt(selected) {
         //remove notSelected (Show to client)
         braceletOpt.classList.remove("notSelected");
         previewBracelet.classList.remove("notSelected");
-    }
-    else if (selected === "label") {
+    } else if (selected === "label") {
         //add notSelected
         companionOpt.classList.add("notSelected");
         previewCompanion.classList.add("notSelected");
@@ -48,8 +49,7 @@ function showSelectedOpt(selected) {
         //remove notSelected (Show to client)
         previewLabel.classList.remove("notSelected");
         labelOpt.classList.remove("notSelected");
-    }
-    else {
+    } else {
         //add notSelected
         labelOpt.classList.add("notSelected");
         previewLabel.classList.add("notSelected");
@@ -62,70 +62,109 @@ function showSelectedOpt(selected) {
 }
 
 function getInputValues() {
-    //const nameInput = document.querySelector("#nameInput").value;
-   // const birthDate = document.querySelector("#birthDate").value;
-   // const procedure = document.querySelector("#procedure").value;
-   // const allergies = document.querySelector("#allergies").value;
-   // const doctorName = document.querySelector("#doctorName").value;
-
+    //Bracelet inputs
+    const nameInput = document.querySelector("#nameInput").value;
+    const birthDate = document.querySelector("#birthDate").value;
+    const procedure = document.querySelector("#procedure").value;
+    const allergy = document.querySelector("#allergy").value;
+    const doctorName = document.querySelector("#doctorName").value;
     //label inputs
     const l_nameInput = document.querySelector("#l-nameInput").value;
-    const l_birthDate = document.querySelector("#l-birthDate").value;
-    const l_procedure = document.querySelector("#l-procedure").value;
+    const l_birthDate = document.querySelector("#l-birth").value;
+    const l_procedure = document.querySelector("#l-proceeding").value;
     const l_doctorName = document.querySelector("#l-doctorName").value;
-    const l_foodAllergies = document.querySelector("#l-foodAllergies").value;
+    const l_foodAllergies = document.querySelector("#l-foodAllergy").value;
     const l_drugAllergy = document.querySelector("#l-drugAllergy").value;
+    //Companion inputs
+    const patientInput = document.querySelector("#patientInput").value;
+    const companionInput = document.querySelector("#companionInput").value;
+    
 
-    //return { nameInput, birthDate, procedure, allergies, doctorName }
-    return {l_nameInput, l_birthDate, l_procedure, l_doctorName, l_foodAllergies, l_drugAllergy };
+    return {
+        nameInput,
+        birthDate,
+        procedure,
+        allergy,
+        doctorName,
+        nameInput,
+        l_nameInput,
+        l_birthDate,
+        l_procedure,
+        l_doctorName,
+        l_foodAllergies,
+        l_drugAllergy,
+        patientInput,
+        companionInput
+    };
 }
 
 function updatePreviewDisplay(inputValues) {
-    //const ppName = document.querySelector("#pp-name");
-   // const ppBirthDate = document.querySelector("#pp-birthDate");
-   // const ppProcedure = document.querySelector("#pp-procedure");
-   // const ppAllergies = document.querySelector("#pp-allergies");
-   // const ppDoctorName = document.querySelector("#pp-doctor-name");
-   // const ppFoodAllergy = document.querySelector("#pp-foodAllergies");
-   // const ppDrugAllergy = document.querySelector("#pp-drugAllergies");
-   // const ppNameCompanion = document.querySelector("#pp-name-companion");
+    //labels Options
+    const braceletOpt = document.querySelector("#braceletOpt");
+    const labelOpt = document.querySelector("#labelOpt");
+    const companionOpt = document.querySelector("#companionOpt");
 
-    //ppName.textContent = inputValues.nameInput;
-   // ppBirthDate.textContent = inputValues.birthDate;
-    //ppProcedure.textContent = inputValues.procedure;
-   // ppAllergies.textContent = inputValues.allergies;
-   // ppDoctorName.textContent = inputValues.doctorName;
-   // ppFoodAllergy.textContent = inputValues.foodAllergies
-   // ppDrugAllergy.textContent = inputValues.drugAllergy
-    //ppNameCompanion.textContent = inputValues.companionName
-//
+    //Bracelet preview
+    const ppName = document.querySelector("#pp-name");
+    const ppBirthDate = document.querySelector("#pp-birthDate");
+    const ppProcedure = document.querySelector("#pp-procedure");
+    const ppAllergies = document.querySelector("#pp-allergies");
+    const ppDoctorName = document.querySelector("#pp-doctor-name");
     //Label preview
-
     const lName = document.querySelector("#l-name");
     const lBirthDate = document.querySelector("#l-birthDate");
     const lDoctorName = document.querySelector("#l-doctor-name");
     const lFoodAllergy = document.querySelector("#l-foodAllergies");
     const lDrugAllergy = document.querySelector("#l-drugAllergies");
     const lProcedure = document.querySelector("#l-procedure");
+    //Companion preview
+    const patientName = document.querySelector("#patient-name");
+    const companionName = document.querySelector("#companion-name");
 
-    lName.textContent = inputValues.l_nameInput;
-    lBirthDate.textContent = inputValues.l_birthDate;
-    lDoctorName.textContent = inputValues.l_doctorName;
-    lFoodAllergy.textContent = inputValues.l_foodAllergies;
-    lDrugAllergy.textContent = inputValues.l_drugAllergy;
-    lProcedure.textContent = inputValues.l_procedure;
+    if (!braceletOpt.classList.contains("notSelected")) {
+        console.log("Pulseira")
+        ppName.textContent = inputValues.nameInput;
+        ppBirthDate.textContent = inputValues.birthDate;
+        ppProcedure.textContent = inputValues.procedure;
+        ppAllergies.textContent = inputValues.allergy;
+        ppDoctorName.textContent = inputValues.doctorName;
+    }
+    else if (!labelOpt.classList.contains("notSelected")) {
+        console.log("Etiqueta comum")
+        lName.textContent = inputValues.l_nameInput;
+        lBirthDate.textContent = inputValues.l_birthDate;
+        lDoctorName.textContent = inputValues.l_doctorName;
+        lFoodAllergy.textContent = inputValues.l_foodAllergies;
+        lDrugAllergy.textContent = inputValues.l_drugAllergy;
+        lProcedure.textContent = inputValues.l_procedure;
+    }
+    else {
+        patientName.textContent = inputValues.patientInput;
+        companionName.textContent = inputValues.companionInput;
+    }
 
-    //return [ ppName, ppBirthDate, ppProcedure, ppAllergies, ppDoctorName, ppFoodAllergy, ppDrugAllergy ]
-    return [ lName, lBirthDate, lDoctorName, lFoodAllergy, lDrugAllergy, lProcedure ];
+    return [
+        lName,
+        lBirthDate,
+        lDoctorName,
+        lFoodAllergy,
+        lDrugAllergy,
+        lProcedure,
+        ppName,
+        ppBirthDate,
+        ppProcedure,
+        ppAllergies,
+        ppDoctorName,
+        patientName,
+        companionName
+    ];
 }
-
 
 document.getElementById("download-pdf").addEventListener("click", function () {
     const art = document.getElementById("label");
 
     const inputValues = getInputValues();
     updatePreviewDisplay(inputValues);
-
 
     const fileName = inputValues.nameInput + ".pdf";
     const opt = {
@@ -135,7 +174,7 @@ document.getElementById("download-pdf").addEventListener("click", function () {
         jsPDF: {
             unit: "mm",
             orientation: "landscape",
-            format: [width, height]
+            format: [width, height],
         },
     };
 
