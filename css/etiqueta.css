@@ -7,9 +7,9 @@
 
 .previewBracelet {
     width: 50rem;
-    height: 7rem;
+    height: 10rem;
     padding: 1rem;
-    font-size: .5rem;
+    font-size: .8rem;
 }
 
 .previewBracelet > .img-area img {

@@ -1,6 +1,6 @@
 //W and H used in format jsPDF according to selected label
-let width = 290;
-let height = 30;
+let width = 305;
+let height = 45;
 // 85, 20 to label
 
 let selectOpt = document.querySelector("#labelOpt").addEventListener("change", () => {
