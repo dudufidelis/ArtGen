@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ArtGen | Saine</title>
+        <link rel="stylesheet" href="../css/default.css">
+        <link rel="stylesheet" href="../css/etiqueta.css">
+        <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+<body>
+    <header>
+        <div>
+            <img src="../assets/logoSaine.png" alt="logo">
+            <h1>ArtGen | Saine</h1>
+        </div>
+       <a href="../index.html">Voltar</a> 
+    </header>
+
+    <div class="container">
+        <div class="config-area"> 
+                <div class="input">
+                    <label for="labelOpt">Tipo de Etiqueta:</label>
+                    <select name="labelOpt" id="labelOpt">
+                        <option value="">Selecione o tipo de Etiqueta</option>
+                        <option value="bracelet">Pulseira</option>
+                        <option value="label">Etiqueta</option>
+                        <option value="companion">Acompanhante</option>
+                    </select>
+                </div>
+
+                <div class="braceletOpt notSelected">
+                    <div class="input">
+                        <label for="name">Nome:</label>
+                        <input type="text" name="name" id="nameInput" maxlength="30">
+                    </div>
+                    <div class="input date">
+                        <label for="date">Data de Nascimento:</label>
+                        <input type="date" min="2024-01-01" id="birthDate" placeholder="dd/mm/aaaa">
+                    </div>
+                    <div class="input procedure">
+                        <label for="procedure">Procedimento:</label>
+                        <input type="text" id="procedure" maxlength="85">
+                    </div>
+                    <div class="input allergies">
+                        <label for="allergies">Alergias:</label>
+                        <input type="text" id="allergies">
+                    </div>
+                    <div class="input doctorName">
+                        <label for="doctorName">Nome do Cirurgião:</label>
+                        <input type="text" id="doctorName">
+                    </div>
+                </div>
+
+                <div class="labelOpt notSelected">
+                    <div class="input">
+                        <label for="name">Nome:</label>
+                        <input type="text" name="name" id="nameInput" maxlength="30">
+                    </div>
+                    <div class="input date">
+                        <label for="date">Data de Nascimento:</label>
+                        <input type="date" min="2024-01-01" id="birthDate" placeholder="dd/mm/aaaa">
+                    </div>
+                    <div class="input doctorName">
+                        <label for="doctorName">Nome do Cirurgião:</label>
+                        <input type="text" id="doctorName">
+                    </div>
+                    <div class="input foodAllergies">
+                        <label for="foodAllergies">Alergia alimentar:</label>
+                        <input type="text" id="foodAllergies">
+                    </div>
+                    <div class="input drugAllergy">
+                        <label for="drugAllergy">Alergia medicamentosa:</label>
+                        <input type="text" id="drugAllergy">
+                    </div>
+                    <div class="input procedure">
+                        <label for="procedure">Procedimento:</label>
+                        <input type="text" id="procedure" maxlength="85">
+                    </div>
+                </div>
+                <div class="companionOpt notSelected">
+                    <div class="input">
+                        <label for="name">Nome do Paciente:</label>
+                        <input type="text" name="name" id="nameInput" maxlength="30">
+                    </div>
+                    <div class="input">
+                        <label for="companion">Nome do Visitante:</label>
+                        <input type="text" name="companion" id="companionInput" maxlength="30">
+                    </div>
+                </div>
+
+                <button id="download-pdf">Baixar</button>
+        </div>
+        
+        <div class="previewBracelet notSelected" id="bracelet">
+            <div class="pp-pulseira">
+                <div class="pp-text-area">
+                    <h1 id="pp-name">Nome do Paciente</h1>
+                    <h1 id="pp-birthDate">00/00/0000</h1>
+                    <h1 id="pp-procedure">Procedimento</h1>
+                    <h1 id="pp-allergies">Alergias</h1>
+                    <h1 id="pp-doctor-name">Nome do Cirurgião</h1>
+                </div>
+            </div>
+            <div class="img-area">
+                <div class="pp-saine-logo">
+                    <img src="../assets/logoSaine.png" alt="Logo Saine Health Complex">
+                </div>
+            </div>
+        </div>
+
+        <div class="previewLabel notSelected" id="label">
+            <div class="pp-etiqueta">
+                <div class="pp-text-area">
+                    <h1 id="pp-name">Nome do Paciente</h1>
+                    <h1 id="pp-birthDate">Data de Nascimento</h1>
+                    <h1 id="pp-doctor-name">Nome do Cirurgião</h1>
+                    <h1 id="pp-foodAllergies">Alergia Alimentar</h1>
+                    <h1 id="pp-drugAllergies">Alergia Medicamentosa</h1>
+                    <h1 id="pp-procedure">Procedimento</h1>
+                </div>
+            </div>
+
+            <div class="img-area">
+                <div class="pp-saine-logo">
+                    <img src="../assets/logoSaine.png" alt="Logo Saine Health Complex">
+                </div>
+            </div>
+        </div>
+
+        <div class="previewCompanion notSelected" id="companion">
+            <div class="pp-etiqueta">
+                <div class="pp-text-area">
+                    <span>
+                        <p>Paciente:</p>
+                        <h1 id="pp-name-client">Nome do Paciente</h1>
+                    </span>
+                    <span>
+                        <p>Acompanhante</p>
+                        <h1 id="pp-name-companion">Nome do Acompanhante</h1>
+                    </span>
+                </div>
+            </div>
+
+            <div class="img-area">
+                <div class="pp-saine-logo">
+                    <img src="../assets/logoSaine.png" alt="Logo Saine Health Complex">
+                </div>
+            </div>
+        </div>
+
+    <script src="../scripts/html2canvas/html2canvas.js"></script>
+    <script src="../scripts/etiquetas.js"></script>
+</body>
+</html>

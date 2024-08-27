@@ -1,0 +1,36 @@
+.previewBracelet, .previewCompanion, .previewLabel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+}
+
+.previewBracelet {
+    width: 50rem;
+    height: 7rem;
+    padding: 1rem;
+    font-size: .5rem;
+}
+
+.previewBracelet > .img-area img {
+    width: 5rem;
+}
+
+.previewLabel, .previewCompanion {
+    width: 19rem;
+    height: 5rem;
+    padding: .5rem;
+    font-size: .25rem;
+}
+
+.previewCompanion p {
+    font-size: .5rem;
+}
+
+.previewLabel > .img-area img, .previewCompanion > .img-area img {
+    width: 3rem;
+}
+
+.notSelected {
+    display: none;
+}
