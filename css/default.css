@@ -156,3 +156,29 @@ header > a:hover {
 .config-area button:hover {
     opacity: 0.9;
 }
+
+.screen-warning {
+    display: none;
+}
+
+@media (max-width: 1380px) {
+    .screen-warning {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       padding: 2rem;
+       margin: 1rem;
+       width: 20rem;
+       border-radius: 1rem;
+       box-shadow: var(--shadow);
+       background-color: #fff;
+       text-align: center;
+       font-size: .7rem;
+    }
+    header {
+        display: none;
+    }
+    .container {
+        display: none;
+    }
+}
