@@ -134,6 +134,8 @@ header > button:hover {
     font-size: 1.8rem;
 }
 
+
+/* Use .disable if you wanna show new cards in menu*/
 .disable {
     background-color: rgb(207, 207, 207);
     cursor: not-allowed;
