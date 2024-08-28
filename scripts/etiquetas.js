@@ -1,25 +1,17 @@
-//W and H used in format jsPDF according to selected label
-let width = 100;
-let height = 40;
-// 85, 20 to label
-// 205, 45 to Bracelet
-
-let SelectOpt = document
-    .querySelector("#labelOpt")
-    .addEventListener("change", () => {
-        let selectedOpt = document.querySelector("#labelOpt").value;
-        switch (selectedOpt) {
-            case "bracelet":
-                showSelectedOpt("bracelet");
-                break;
-            case "label":
-                showSelectedOpt("label");
-                break;
-            case "companion":
-                showSelectedOpt("companion");
-                break;
-        }
-    });
+let SelectOpt = document.querySelector("#labelOpt").addEventListener("change", () => {
+    let selectedOpt = document.querySelector("#labelOpt").value;
+    switch (selectedOpt) {
+        case "bracelet":
+            showSelectedOpt("bracelet");
+            break;
+        case "label":
+            showSelectedOpt("label");
+            break;
+        case "companion":
+            showSelectedOpt("companion");
+            break;
+    }
+});
 
 function showSelectedOpt(selected) {
     //config area
@@ -78,7 +70,6 @@ function getInputValues() {
     //Companion inputs
     const patientInput = document.querySelector("#patientInput").value;
     const companionInput = document.querySelector("#companionInput").value;
-    
 
     return {
         nameInput,
@@ -94,15 +85,28 @@ function getInputValues() {
         l_foodAllergies,
         l_drugAllergy,
         patientInput,
-        companionInput
+        companionInput,
     };
 }
 
 function updatePreviewDisplay(inputValues) {
-    //labels Options
-    const braceletOpt = document.querySelector("#braceletOpt");
-    const labelOpt = document.querySelector("#labelOpt");
-    const companionOpt = document.querySelector("#companionOpt");
+    let opt = "";
+    let selectedOpt = document.querySelector("#labelOpt").value;
+
+    switch (selectedOpt) {
+        case "bracelet":
+            showSelectedOpt("bracelet");
+            opt = "bracelet";
+            break;
+        case "label":
+            showSelectedOpt("label");
+            opt = "label";
+            break;
+        case "companion":
+            showSelectedOpt("companion");
+            opt = "companion";
+            break;
+    }
 
     //Bracelet preview
     const ppName = document.querySelector("#pp-name");
@@ -121,24 +125,20 @@ function updatePreviewDisplay(inputValues) {
     const patientName = document.querySelector("#patient-name");
     const companionName = document.querySelector("#companion-name");
 
-    if (!braceletOpt.classList.contains("notSelected")) {
-        console.log("Pulseira")
+    if (opt == "bracelet") {
         ppName.textContent = inputValues.nameInput;
         ppBirthDate.textContent = inputValues.birthDate;
         ppProcedure.textContent = inputValues.procedure;
         ppAllergies.textContent = inputValues.allergy;
         ppDoctorName.textContent = inputValues.doctorName;
-    }
-    else if (!labelOpt.classList.contains("notSelected")) {
-        console.log("Etiqueta comum")
+    } else if (opt == "label") {
         lName.textContent = inputValues.l_nameInput;
         lBirthDate.textContent = inputValues.l_birthDate;
         lDoctorName.textContent = inputValues.l_doctorName;
         lFoodAllergy.textContent = inputValues.l_foodAllergies;
         lDrugAllergy.textContent = inputValues.l_drugAllergy;
         lProcedure.textContent = inputValues.l_procedure;
-    }
-    else {
+    } else {
         patientName.textContent = inputValues.patientInput;
         companionName.textContent = inputValues.companionInput;
     }
@@ -156,17 +156,41 @@ function updatePreviewDisplay(inputValues) {
         ppAllergies,
         ppDoctorName,
         patientName,
-        companionName
+        companionName,
     ];
 }
 
 document.getElementById("download-pdf").addEventListener("click", function () {
-    const art = document.getElementById("label");
+    let fileName;
+    let width;
+    let height;
+    let art;
+    let selectedOpt = document.querySelector("#labelOpt").value;
 
     const inputValues = getInputValues();
     updatePreviewDisplay(inputValues);
 
-    const fileName = inputValues.nameInput + ".pdf";
+    switch (selectedOpt) {
+        case "bracelet":
+            art = document.getElementById("bracelet");
+            width = 205;
+            height = 45;
+            fileName = inputValues.nameInput + ".pdf";
+            break;
+        case "label":
+            art = document.getElementById("label");
+            width = 100;
+            height = 40;
+            fileName = inputValues.l_nameInput + ".pdf";
+            break;
+        case "companion":
+            art = document.getElementById("label");
+            width = 100;
+            height = 40;
+            fileName = inputValues.patientInput + ".pdf";
+            break;
+    }
+
     const opt = {
         filename: fileName,
         image: { type: "pdf", quality: 1 },
