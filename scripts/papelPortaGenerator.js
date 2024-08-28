@@ -12,7 +12,7 @@ function getInputValues() {
     return { inputName, doctorName, formattedDate, procedure, foodAllergies, drugAllergy, suits };
 }
 
-function checkInputLenght(input) {
+function checkInputLength(input) {
     if (input.length > 35) {
         document.querySelector("#pp-procedure").style.fontSize = "1.2rem"
         document.querySelector("#pp-procedure").style.fontWeight = "600"
@@ -64,7 +64,7 @@ document.getElementById("download-pdf").addEventListener("click", function () {
 
     const inputValues = getInputValues();
     const textPreview = updatePreviewDisplay(inputValues)
-    checkInputLenght(inputValues.procedure)
+    checkInputLength(inputValues.procedure)
     setUppercase(textPreview)
     toggleSuitsVisibility(inputValues.suits);
     updatePreviewDisplay(inputValues);

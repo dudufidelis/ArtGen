@@ -72,15 +72,15 @@
                     </div>
                     <div class="input foodAllergies">
                         <label for="l-foodAllergy">Alergia alimentar:</label>
-                        <input type="text" id="l-foodAllergy">
+                        <input type="text" id="l-foodAllergy" maxlength="80">
                     </div>
                     <div class="input drugAllergy">
                         <label for="drugAllergy">Alergia medicamentosa:</label>
-                        <input type="text" id="l-drugAllergy">
+                        <input type="text" id="l-drugAllergy" maxlength="80">
                     </div>
                     <div class="input procedure">
                         <label for="l-proceeding">Procedimento:</label>
-                        <input type="text" id="l-proceeding" maxlength="85">
+                        <input type="text" id="l-proceeding" maxlength="80">
                     </div>
                 </div>
 
@@ -116,6 +116,12 @@
         </div>
 
         <div class="previewLabel notSelected" id="label">
+            <div class="img-area">
+                <div class="pp-saine-logo">
+                    <img src="../assets/logoSaine.png" alt="Logo Saine Health Complex">
+                </div>
+            </div>
+
             <div class="pp-etiqueta">
                 <div class="pp-text-area">
                     <h1 id="l-name">Nome do Paciente</h1>
@@ -126,15 +132,14 @@
                     <h1 id="l-procedure">Procedimento</h1>
                 </div>
             </div>
+        </div>
 
+        <div class="previewCompanion notSelected" id="companion">
             <div class="img-area">
                 <div class="pp-saine-logo">
                     <img src="../assets/logoSaine.png" alt="Logo Saine Health Complex">
                 </div>
             </div>
-        </div>
-
-        <div class="previewCompanion notSelected" id="companion">
             <div class="pp-etiqueta">
                 <div class="pp-text-area">
                     <span>
@@ -148,11 +153,6 @@
                 </div>
             </div>
 
-            <div class="img-area">
-                <div class="pp-saine-logo">
-                    <img src="../assets/logoSaine.png" alt="Logo Saine Health Complex">
-                </div>
-            </div>
         </div>
 
     <script src="../scripts/html2canvas/html2canvas.js"></script>

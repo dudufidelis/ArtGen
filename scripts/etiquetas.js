@@ -71,6 +71,12 @@ function getInputValues() {
     const patientInput = document.querySelector("#patientInput").value;
     const companionInput = document.querySelector("#companionInput").value;
 
+    //Check if inpout lenght will break the design
+    if (l_procedure.lenght || l_foodAllergies || l_drugAllergy) {
+
+    }
+
+
     return {
         nameInput,
         birthDate,
@@ -87,6 +93,20 @@ function getInputValues() {
         patientInput,
         companionInput,
     };
+}
+
+function checkInputLength(input) {
+    if (input.l_procedure.length >= 30 ||
+        input.l_drugAllergy.length >= 30 ||
+        input.l_foodAllergies.length >= 30) {
+        document.querySelector("#l-procedure").style.fontSize = ".8rem"
+        document.querySelector("#l-foodAllergies").style.fontSize = ".8rem"
+        document.querySelector("#l-drugAllergies").style.fontSize = ".8rem"
+    } else {
+        document.querySelector("#l-procedure").style.fontSize = "1.2rem"
+        document.querySelector("#l-foodAllergies").style.fontSize = "1.2rem"
+        document.querySelector("#l-drugAllergies").style.fontSize = "1.2rem"
+    }
 }
 
 function updatePreviewDisplay(inputValues) {
@@ -160,6 +180,12 @@ function updatePreviewDisplay(inputValues) {
     ];
 }
 
+function setUppercase(textPreview) {
+    textPreview.forEach(textPreview => {
+        textPreview.style.textTransform = "uppercase";
+    });
+}
+
 document.getElementById("download-pdf").addEventListener("click", function () {
     let fileName;
     let width;
@@ -168,7 +194,9 @@ document.getElementById("download-pdf").addEventListener("click", function () {
     let selectedOpt = document.querySelector("#labelOpt").value;
 
     const inputValues = getInputValues();
-    updatePreviewDisplay(inputValues);
+    const textPreview = updatePreviewDisplay(inputValues)
+    checkInputLength(inputValues)
+    setUppercase(textPreview)
 
     switch (selectedOpt) {
         case "bracelet":
@@ -179,14 +207,14 @@ document.getElementById("download-pdf").addEventListener("click", function () {
             break;
         case "label":
             art = document.getElementById("label");
-            width = 100;
-            height = 40;
+            width = 135;
+            height = 45;
             fileName = inputValues.l_nameInput + ".pdf";
             break;
         case "companion":
-            art = document.getElementById("label");
-            width = 100;
-            height = 40;
+            art = document.getElementById("companion");
+            width = 135;
+            height = 45;
             fileName = inputValues.patientInput + ".pdf";
             break;
     }
