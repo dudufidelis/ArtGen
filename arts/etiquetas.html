@@ -10,6 +10,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
 <body>
+    <div class="warning-test">
+        <h1>Em fase de testes. Por favor relate se houver algum problema, obrigado!</h1>
+    </div>
     <header>
         <div>
             <img src="../assets/logoSaine.png" alt="logo">
@@ -17,6 +20,7 @@
         </div>
        <a href="../index.html">Voltar</a> 
     </header>
+
 
     <div class="screen-warning">
         <h1>Aumente o tamanho da janela</h1>
@@ -101,15 +105,21 @@
         <div class="previewBracelet notSelected" id="bracelet">
             <div class="img-area">
                 <div class="pp-saine-logo">
-                    <img src="../assets/logoSaine.png" alt="Logo Saine Health Complex">
+                    <img src="../assets/logo_saine_outline.png" alt="Logo Saine Health Complex">
                 </div>
             </div>
             <div class="pp-pulseira">
                 <div class="pp-text-area">
                     <h1 id="pp-name">Nome do Paciente</h1>
                     <h1 id="pp-birthDate">00/00/0000</h1>
-                    <h1 id="pp-procedure">Procedimento</h1>
-                    <h1 id="pp-allergies">Alergias</h1>
+                    <span>
+                        <h1>PROCEDIMENTO:</h1>
+                        <h1 id="pp-procedure">Procedimento</h1>
+                    </span>
+                    <span>
+                        <h1>ALERGIA:</h1>
+                        <h1 id="pp-allergies">Alergias</h1>
+                    </span>
                     <h1 id="pp-doctor-name">Nome do Cirurgião</h1>
                 </div>
             </div>
@@ -118,7 +128,7 @@
         <div class="previewLabel notSelected" id="label">
             <div class="img-area">
                 <div class="pp-saine-logo">
-                    <img src="../assets/logoSaine.png" alt="Logo Saine Health Complex">
+                    <img src="../assets/logo_saine_outline.png" alt="Logo Saine Health Complex">
                 </div>
             </div>
 
@@ -127,9 +137,18 @@
                     <h1 id="l-name">Nome do Paciente</h1>
                     <h1 id="l-birthDate">Data de Nascimento</h1>
                     <h1 id="l-doctor-name">Nome do Cirurgião</h1>
-                    <h1 id="l-foodAllergies">Alergia Alimentar</h1>
-                    <h1 id="l-drugAllergies">Alergia Medicamentosa</h1>
-                    <h1 id="l-procedure">Procedimento</h1>
+                    <span>
+                        <h1>ALERGIA ALIM:</h1>
+                        <h1 id="l-foodAllergies">Alergia Alimentar</h1>
+                    </span>
+                    <span>
+                        <h1>ALERGIA MED:</h1>
+                        <h1 id="l-drugAllergies">Alergia Medicamentosa</h1>
+                    </span>
+                    <span>
+                        <h1>PROCEDIMENTO:</h1>
+                        <h1 id="l-procedure">Procedimento</h1>
+                    </span>
                 </div>
             </div>
         </div>
@@ -137,7 +156,7 @@
         <div class="previewCompanion notSelected" id="companion">
             <div class="img-area">
                 <div class="pp-saine-logo">
-                    <img src="../assets/logoSaine.png" alt="Logo Saine Health Complex">
+                    <img src="../assets/logo_saine_outline.png" alt="Logo Saine Health Complex">
                 </div>
             </div>
             <div class="pp-etiqueta">

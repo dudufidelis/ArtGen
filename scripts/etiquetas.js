@@ -95,20 +95,6 @@ function getInputValues() {
     };
 }
 
-function checkInputLength(input) {
-    if (input.l_procedure.length >= 30 ||
-        input.l_drugAllergy.length >= 30 ||
-        input.l_foodAllergies.length >= 30) {
-        document.querySelector("#l-procedure").style.fontSize = ".8rem"
-        document.querySelector("#l-foodAllergies").style.fontSize = ".8rem"
-        document.querySelector("#l-drugAllergies").style.fontSize = ".8rem"
-    } else {
-        document.querySelector("#l-procedure").style.fontSize = "1.2rem"
-        document.querySelector("#l-foodAllergies").style.fontSize = "1.2rem"
-        document.querySelector("#l-drugAllergies").style.fontSize = "1.2rem"
-    }
-}
-
 function updatePreviewDisplay(inputValues) {
     let opt = "";
     let selectedOpt = document.querySelector("#labelOpt").value;
@@ -195,7 +181,6 @@ document.getElementById("download-pdf").addEventListener("click", function () {
 
     const inputValues = getInputValues();
     const textPreview = updatePreviewDisplay(inputValues)
-    checkInputLength(inputValues)
     setUppercase(textPreview)
 
     switch (selectedOpt) {
