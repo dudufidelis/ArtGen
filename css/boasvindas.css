@@ -62,3 +62,27 @@
 .bv-watermark img {
     width: 8rem;
 }
+
+/*Maternidade*/
+
+.maternidade {
+    background-image: url(../assets/maternidade_bc.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mt-name {
+    font-family: var(--name-font);
+    font-weight: bold;
+    font-size: 2rem;
+    color: var(--blue-150);
+    margin-bottom: 2.3rem;
+    margin-left: 3rem;
+}
+
+.notSelected {
+    display: none;
+}
