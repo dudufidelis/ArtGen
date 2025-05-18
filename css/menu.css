@@ -146,11 +146,14 @@ header > button:hover {
 }
 
 .watermark {
-    color: rgb(173, 173, 173);
     font-size: 1.2rem;
     padding: .5rem;
     width: 100%;
     text-align: right;
+}
+
+.watermark a {
+    color: rgb(173, 173, 173);
 }
 
 .card.disable::after {
