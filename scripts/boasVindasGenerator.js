@@ -54,7 +54,7 @@ function updatePreviewDisplay(inputValues) {
             bv_name.style.textTransform = "uppercase";
         }
     } else {
-        const mt_name = document.querySelector(".mt-name");
+        const mt_name = document.querySelector("#mt-name");
 
         if (mt_name) {
             mt_name.textContent = inputValues.inputName;
