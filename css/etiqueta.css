@@ -7,6 +7,9 @@
     text-align: center;
 }
 
+.previewLabel > .img-area img{
+    width: 4rem;
+}
 
 .previewBracelet {
     display: flex;
@@ -31,16 +34,21 @@
     width: 30rem;
     height: 10rem;
     padding: .5rem;
-    font-size: .4rem;
+    font-size: .5rem;
+}
+
+.previewCompanion {
+    font-size: .6rem;
 }
 
 .previewCompanion p {
     font-size: 1rem;
 }
 
-.previewLabel > .img-area img, .previewCompanion > .img-area img {
-    width: 4rem;
+.previewCompanion > .img-area img {
+    width: 6rem;
 }
+
 
 .notSelected {
     display: none;
